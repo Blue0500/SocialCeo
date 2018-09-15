@@ -1,0 +1,11 @@
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\bin\Debug\netcoreapp2.1\TweetDownloader.deps.json
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\bin\Debug\netcoreapp2.1\TweetDownloader.runtimeconfig.json
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\bin\Debug\netcoreapp2.1\TweetDownloader.runtimeconfig.dev.json
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\bin\Debug\netcoreapp2.1\TweetDownloader.dll
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\bin\Debug\netcoreapp2.1\TweetDownloader.pdb
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\obj\Debug\netcoreapp2.1\TweetDownloader.csproj.CoreCompileInputs.cache
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\obj\Debug\netcoreapp2.1\TweetDownloader.AssemblyInfoInputs.cache
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\obj\Debug\netcoreapp2.1\TweetDownloader.AssemblyInfo.cs
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\obj\Debug\netcoreapp2.1\TweetDownloader.dll
+C:\Users\joshw\Source\Repos\socialceo\TweetDownloader\obj\Debug\netcoreapp2.1\TweetDownloader.pdb
+C:\Users\joshw\source\repos\socialceo\TweetDownloader\obj\Debug\netcoreapp2.1\TweetDownloader.csprojAssemblyReference.cache
