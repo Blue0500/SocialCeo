@@ -2,14 +2,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>cf156927-d465-4941-92ba-60481270136f</ProjectGuid>
+    <ProjectGuid>b4f3c322-75af-45d9-922f-c57ace522bbd</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>SentimentAnalyzer.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
-    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
-    <LaunchProvider>IronPython (.NET) launcher</LaunchProvider>
     <OutputPath>.</OutputPath>
     <Name>SentimentAnalyzer</Name>
     <RootNamespace>SentimentAnalyzer</RootNamespace>
@@ -23,10 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="SentimentAnalyzer.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|3.6" />
+    <Compile Include="SentimentAnalyzer.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
