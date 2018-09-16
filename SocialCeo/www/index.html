@@ -1,4 +1,83 @@
-lkajsdlf;jasl;fd
-as
-f
-sa
+<html>
+<head>
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href="css/skeleton.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header">
+        <h1>Social CEO</h1>
+    </div>
+
+    <hr />
+
+    <div class="container">
+        <div class="twelve rows">
+            <p>
+                Have you ever wondered how tweets can impact the stock price of companies?
+                Ever thought that sometimes tweeting is not such a good idea? To answer these
+                questions, our team has constructed a model that predicts (approximately) the
+                change in Tesla's stock price over the next 24 hours based on Elon Musk's most
+                recent tweets. Obviously, there are many more factors that determine stock
+                than only Elon's tweets, but surprisingly we have found that there is
+                a coorelation. Our model uses machine learning to analyze the sentiment of
+                the a tweet, as well as the number of likes and retweets. Using this, we can
+                estimate how Tesla's stock will be impacted.
+            </p>
+
+            <p>
+                To test the model, use the form below to input a hypothetical Elon Musk tweet,
+                and see how the stock would be impacted.
+            </p>
+
+            <form id="form" method="get">
+                <label for="exampleMessage">Elon Musk would say...</label>
+                <textarea class="u-full-width" placeholder="Tweet content" name="text"></textarea>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="exampleEmailInput">Favorites</label>
+                        <input class="u-full-width" name="favorites" type="text">
+                    </div>
+                    <div class="six columns">
+                        <label for="exampleRecipientInput">Retweets</label>
+                        <input class="u-full-width" name="retweets" type="text">
+                    </div>
+                </div>
+                <input id="submit_button" class="button" value="Submit" type="button">
+            </form>
+
+            <div id="result_panel" style="display:none">
+                <b>... And Tesla's stock</b><br />
+                <pre><code id="result_label">Increases by .5%</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        $("#submit_button").click(function () {
+            $.ajax({
+                url: 'predict/elon_musk',
+                data: $('#form').serialize(),
+                success: function (data) {
+                    $("#result_panel").fadeOut(200, function () {
+                        if (data > 0) {
+                            $("#result_label").html("Tesla's stock increases by " + (Math.round(data * 100) / 100) + "%");
+                        }
+                        else if (data === 0) {
+                            $("#result_label").html("Tesla's stock doesn't change");
+                        }
+                        else {
+                            $("#result_label").html("Tesla's stock decreases by " + (Math.round(-data * 100) / 100) + "%");
+                        }
+
+                        $("#result_panel").fadeIn(200);
+                    });
+                },
+                error: function () { alert("Invalid data"); }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.header {
+    margin-top:2rem;
+    display:table;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.header h1 {
+    margin-bottom:0rem;
+}
+
+textarea {
+    resize:vertical
+}

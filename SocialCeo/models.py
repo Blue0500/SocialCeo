@@ -10,7 +10,7 @@ from sklearn.linear_model import LassoCV
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import mean_squared_error, r2_score
 
-TEST_PERCENT = .05
+TEST_PERCENT = .1
 
 def init(tweet_data):
     item1, item2 = prepare_data(tweet_data)
@@ -20,12 +20,8 @@ def init(tweet_data):
     #print("Least Squared:    " + str(least_squared(item1, item2))[1])
     #print("Polynomial:       " + str(poly(item1, item2))[1])
 
-    poly_model = poly(item1, item2)[0]
-
-    pickle_file = 'models.pkl'
-    model_pkl = open('models.pkl', 'wb')
-    pickle.dump(poly_model, pickle_file)
-    model_pkl.close()
+    poly_model = least_squared(item1, item2)
+    return poly_model
 
 def prepare_data(tweet_data):
     X_data = []
@@ -69,15 +65,15 @@ def least_squared(X_data, Y_data):
     X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=TEST_PERCENT)
 
     reg = linear_model.LinearRegression()
-    reg.fit (X_train, y_train)
+    reg.fit(X_train, y_train)
     
     reg_predict_y = reg.predict(X_test)
     reg_error = (mean_squared_error(y_test, reg_predict_y) ** .5) / (max(y_train) - min(y_train))
 
-    #print('Least Squares:', reg_error)
+    # print('Least Squares:', reg_error)
     # print('Least Squares Coeff', reg.coef_)
 
-    return reg, reg_error
+    return reg
 
 def poly(X_data, Y_data):
     X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=TEST_PERCENT)
@@ -100,13 +96,5 @@ def poly(X_data, Y_data):
     trans = model.fit_transform(X_train, y_train)
     model, error = least_squared(trans, y_train)
 
-    return model, error
-
-def predict(likes, retweets, subjectivity, polarity):
-
-    model_pkl =  open('models.pkl', 'rb')
-    model = load(model_pkl)
-    prediction = model.predict([likes, retweets, subjectivity, polarity])
-
-    return prediction
+    return model
 

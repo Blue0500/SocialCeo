@@ -36,11 +36,17 @@
     <Folder Include="data\stocks\" />
     <Folder Include="data\tweets\" />
     <Folder Include="www\" />
+    <Folder Include="www\css\" />
+    <Folder Include="www\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\stocks\elon_musk.csv" />
     <Content Include="Data\tweets\elon_musk.csv" />
+    <Content Include="www\css\normalize.css" />
+    <Content Include="www\css\site.css" />
+    <Content Include="www\css\skeleton.css" />
     <Content Include="www\index.html" />
+    <Content Include="www\js\jquery.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

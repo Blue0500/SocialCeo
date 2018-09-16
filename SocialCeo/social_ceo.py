@@ -6,8 +6,9 @@ import math
 def elon_musk_data():
     return tweet_parser.generate_data("elon_musk")
 
-webserver.run();
+print("Initalizing data for server")
+data = elon_musk_data()
+model = models.init(data)
 
-#data = elon_musk_data()
-#models.run(data)
-
+print("Server running")
+webserver.run(model)
