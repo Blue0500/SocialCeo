@@ -1,6 +1,7 @@
 from sklearn import linear_model
 import math
 import numpy as np
+import pickle
 from matplotlib import pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures
@@ -14,10 +15,17 @@ TEST_PERCENT = .05
 def init(tweet_data):
     item1, item2 = prepare_data(tweet_data)
 
-    print("Ridge Regression: " + str(ridge_regression(item1, item2)))
-    print("Lasso:            " + str(lasso(item1, item2)))
-    print("Least Squared:    " + str(least_squared(item1, item2)))
-    print("Polynomial:       " + str(poly(item1, item2)))
+    #print("Ridge Regression: " + str(ridge_regression(item1, item2)))
+    #print("Lasso:            " + str(lasso(item1, item2)))
+    #print("Least Squared:    " + str(least_squared(item1, item2))[1])
+    #print("Polynomial:       " + str(poly(item1, item2))[1])
+
+    poly_model = poly(item1, item2)[0]
+
+    pickle_file = 'models.pkl'
+    model_pkl = open('models.pkl', 'wb')
+    pickle.dump(poly_model, pickle_file)
+    model_pkl.close()
 
 def prepare_data(tweet_data):
     X_data = []
@@ -69,7 +77,7 @@ def least_squared(X_data, Y_data):
     #print('Least Squares:', reg_error)
     # print('Least Squares Coeff', reg.coef_)
 
-    return reg_error
+    return reg, reg_error
 
 def poly(X_data, Y_data):
     X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=TEST_PERCENT)
@@ -90,4 +98,15 @@ def poly(X_data, Y_data):
     )
     
     trans = model.fit_transform(X_train, y_train)
-    return least_squared(trans, y_train)
+    model, error = least_squared(trans, y_train)
+
+    return model, error
+
+def predict(likes, retweets, subjectivity, polarity):
+
+    model_pkl =  open('models.pkl', 'rb')
+    model = load(model_pkl)
+    prediction = model.predict([likes, retweets, subjectivity, polarity])
+
+    return prediction
+

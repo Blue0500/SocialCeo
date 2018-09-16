@@ -1,4 +1,5 @@
 from textblob import TextBlob
+import models
 import io
 import csv
 import dateutil.parser as date_parse
@@ -83,6 +84,15 @@ def aggregate_tweets_stocks(tweet_data, stock_data):
             rows.append(data)
 
     return rows
+
+def generate_variables(text, likes, retweets):
+
+    analysis = TextBlob(text)
+    subjectivity = analysis.sentiment.subjectivity
+    polarity = analysis.sentiment.polarity
+    prediction = models.predict(likes, retweets, subjectivity, polarity)
+
+    return prediction
 
 def generate_data(ceo):
     tweet_file = "data/tweets/" + ceo + ".csv"
