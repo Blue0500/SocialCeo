@@ -29,7 +29,7 @@
     <Compile Include="models.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="stockpercentchange.py" />
+    <Compile Include="stockchange.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="tsla.us.txt" />

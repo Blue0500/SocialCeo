@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>b4f3c322-75af-45d9-922f-c57ace522bbd</ProjectGuid>
+    <ProjectGuid>4006201c-ac36-4a2f-bf7b-ea00aed551fc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tweet_parser.py</StartupFile>
+    <StartupFile>social_ceo.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>SentimentAnalyzer</Name>
-    <RootNamespace>SentimentAnalyzer</RootNamespace>
+    <Name>SocialCeo</Name>
+    <RootNamespace>SocialCeo</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,8 +21,26 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="models.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tweet_parser.py" />
-    <Compile Include="stockchange.py" />
+    <Compile Include="social_ceo.py" />
+    <Compile Include="webserver.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="data\combined\" />
+    <Folder Include="data\stocks\" />
+    <Folder Include="data\tweets\" />
+    <Folder Include="www\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\stocks\elon_musk.csv" />
+    <Content Include="Data\tweets\elon_musk.csv" />
+    <Content Include="www\index.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -5,11 +5,9 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TweetDownloader", "TweetDownloader\TweetDownloader.csproj", "{B094F132-C563-43C5-BCC9-6C03A2AEA3E5}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SentimentAnalyzer", "SentimentAnalyzer\SentimentAnalyzer.pyproj", "{B4F3C322-75AF-45D9-922F-C57ACE522BBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Website\Website.csproj", "{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Stock Change Checker", "PythonApplication1\Stock Change Checker.pyproj", "{E9F8DED9-1993-41BA-A942-59E28957E618}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SocialCeo", "SocialCeo\SocialCeo.pyproj", "{4006201C-AC36-4A2F-BF7B-EA00AED551FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +19,12 @@ Global
 		{B094F132-C563-43C5-BCC9-6C03A2AEA3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B094F132-C563-43C5-BCC9-6C03A2AEA3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B094F132-C563-43C5-BCC9-6C03A2AEA3E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4F3C322-75AF-45D9-922F-C57ACE522BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4F3C322-75AF-45D9-922F-C57ACE522BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9F8DED9-1993-41BA-A942-59E28957E618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9F8DED9-1993-41BA-A942-59E28957E618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4006201C-AC36-4A2F-BF7B-EA00AED551FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4006201C-AC36-4A2F-BF7B-EA00AED551FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

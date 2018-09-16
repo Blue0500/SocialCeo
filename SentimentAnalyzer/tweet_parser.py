@@ -2,6 +2,7 @@ from textblob import TextBlob
 import io
 import csv
 import dateutil.parser as date_parse
+import stockchange
 
 tweet_info = { }
 with open("Tweets.csv", encoding="utf-8") as file:
@@ -13,12 +14,12 @@ with open("Tweets.csv", encoding="utf-8") as file:
 
         # Calculate subjectivity and polarity
         row["Subjectivity"] = blob.subjectivity
-        row["Polarity"] = (blob.polarity + 1) / 2
+        row["Polarity"] = blob.polarity #(blob.polarity + 1) / 2
         
         row["Favorites"] = float(row["Favorites"])
         row["Retweets"] = float(row["Retweets"])
 
-        date = date_parse.parse(row.pop("Date")).strftime("%Y-%d-%m")
+        date = row.pop("Date") #date_parse.parse(row.pop("Date")).strftime("%Y-%d-%m")
         if date in tweet_info:
             tweet_info[date].append(row)
         else:
@@ -46,17 +47,12 @@ for (date, info) in tweet_info.items():
     aggregate_info.append([date, total_retweets, total_favorites, total_subjectivity, total_polarity])
 
 csv_rows = []
-with open("StockChanges.csv", encoding="utf-8") as file:
-    reader = csv.reader(file)
-    stock_changes = { }
+stock_changes = stockchange.get_dates("HistoricalQuotes.csv")
 
-    for row in list(reader)[1:]:
-        stock_changes[row[0]] = row[1]
-
-    for info in aggregate_info:
-        if info[0] in stock_changes:            
-            info[0] = stock_changes[info[0]]
-            csv_rows.append(info)
+for info in aggregate_info:
+    if info[0] in stock_changes:            
+        info[0] = stock_changes[info[0]]
+        csv_rows.append(info)
 
 with open('Tweets_out.csv', mode='w', encoding="utf-8") as out_file:
     writer = csv.writer(out_file, lineterminator='\n')
