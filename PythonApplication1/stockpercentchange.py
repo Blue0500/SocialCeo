@@ -14,11 +14,10 @@ with open('tsla.us.txt', 'r') as csvfile:
             changes.append(percent_difference)
             days.append(stocks[-2][0])
 
-
 cumulative = (list(zip(days, changes)))
 
 
 with open('changes.csv', 'w') as csvfile:
-    changewriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator = '\n')
+    changewriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL, lineterminator = '\n')
     for i in range(len(cumulative)):
         changewriter.writerow(cumulative[i])

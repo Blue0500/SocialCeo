@@ -1,7 +1,7 @@
 from textblob import TextBlob
 import io
 import csv
-import date
+import dateutil.parser as date_parse
 
 tweet_info = { }
 with open("Tweets.csv", encoding="utf-8") as file:
@@ -18,7 +18,7 @@ with open("Tweets.csv", encoding="utf-8") as file:
         row["Favorites"] = float(row["Favorites"])
         row["Retweets"] = float(row["Retweets"])
 
-        date = strptime(row.pop("Date"), "%m/%d/%Y").isoformat()
+        date = date_parse.parse(row.pop("Date")).strftime("%Y-%d-%m")
         if date in tweet_info:
             tweet_info[date].append(row)
         else:
@@ -45,6 +45,7 @@ for (date, info) in tweet_info.items():
 
     aggregate_info.append([date, total_retweets, total_favorites, total_subjectivity, total_polarity])
 
+csv_rows = []
 with open("StockChanges.csv", encoding="utf-8") as file:
     reader = csv.reader(file)
     stock_changes = { }
@@ -53,11 +54,13 @@ with open("StockChanges.csv", encoding="utf-8") as file:
         stock_changes[row[0]] = row[1]
 
     for info in aggregate_info:
-        info[0] = stock_changes[info[0]]
+        if info[0] in stock_changes:            
+            info[0] = stock_changes[info[0]]
+            csv_rows.append(info)
 
 with open('Tweets_out.csv', mode='w', encoding="utf-8") as out_file:
     writer = csv.writer(out_file, lineterminator='\n')
-    writer.writerow(["Date", "Retweets", "Favorites", "Subjectivity", "Polarity"])
+    writer.writerow(["PercentChange", "Retweets", "Favorites", "Subjectivity", "Polarity"])
 
     for row in csv_rows:
         writer.writerow(row)

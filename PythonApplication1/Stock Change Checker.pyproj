@@ -5,13 +5,14 @@
     <ProjectGuid>e9f8ded9-1993-41ba-a942-59e28957e618</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>stockpercentchange.py</StartupFile>
+    <StartupFile>ModelRunner.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Stock Change Checker</Name>
     <RootNamespace>PythonApplication1</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ModelRunner.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="stockpercentchange.py" />
   </ItemGroup>
   <ItemGroup>
