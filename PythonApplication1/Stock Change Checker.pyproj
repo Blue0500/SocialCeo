@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="models.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="stockpercentchange.py" />
   </ItemGroup>
   <ItemGroup>
