@@ -1,24 +1,24 @@
-
-import pandas as pd
 import csv
 
-table = pd.read_csv('tsla.us.txt')
-stocks = table['Open']
-days = table['Date']
-change = []
+changes = []
+days = []
+stocks = []
 
-for i in range(len(stocks)-1):
-    percent_difference = (stocks[i+1] - stocks[i])/(stocks[i]) * 100
-    change.append(percent_difference)
-
-
-
-
-with open('changes.csv', 'wb', newline = '') as csvfile:
-    changewriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    for i in range(len(stocks)-1):
-        changewriter.writerow(zip(days[i], stocks[i]))
+with open('tsla.us.txt', 'r') as csvfile:
+    reader = csv.reader(csvfile)
+    #row_count = sum(1 for row in csvfile)
+    for row in reader:
+        stocks.append(row)
+        if len(stocks) > 2:
+            percent_difference = (float(stocks[-1][1]) - float(stocks[-2][1]))/float(stocks[-2][1]) * 100
+            changes.append(percent_difference)
+            days.append(stocks[-2][0])
 
 
+cumulative = (list(zip(days, changes)))
 
 
+with open('changes.csv', 'w') as csvfile:
+    changewriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator = '\n')
+    for i in range(len(cumulative)):
+        changewriter.writerow(cumulative[i])
