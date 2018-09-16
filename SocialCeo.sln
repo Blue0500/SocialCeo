@@ -9,6 +9,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SentimentAnalyzer", "Sentim
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Stock Change Checker", "PythonApplication1\Stock Change Checker.pyproj", "{E9F8DED9-1993-41BA-A942-59E28957E618}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +21,14 @@ Global
 		{B094F132-C563-43C5-BCC9-6C03A2AEA3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B094F132-C563-43C5-BCC9-6C03A2AEA3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B094F132-C563-43C5-BCC9-6C03A2AEA3E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CF156927-D465-4941-92BA-60481270136F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF156927-D465-4941-92BA-60481270136F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9F8DED9-1993-41BA-A942-59E28957E618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9F8DED9-1993-41BA-A942-59E28957E618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4F3C322-75AF-45D9-922F-C57ACE522BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B4F3C322-75AF-45D9-922F-C57ACE522BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9F8DED9-1993-41BA-A942-59E28957E618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9F8DED9-1993-41BA-A942-59E28957E618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1E1EE7-3662-4A31-BED3-ED933C3412BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,7 @@
 from textblob import TextBlob
 import io
 import csv
+import date
 
 tweet_info = { }
 with open("Tweets.csv", encoding="utf-8") as file:
@@ -17,7 +18,7 @@ with open("Tweets.csv", encoding="utf-8") as file:
         row["Favorites"] = float(row["Favorites"])
         row["Retweets"] = float(row["Retweets"])
 
-        date = row.pop("Date")
+        date = strptime(row.pop("Date"), "%m/%d/%Y").isoformat()
         if date in tweet_info:
             tweet_info[date].append(row)
         else:
