@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TweetDownloader", "TweetDownloader\TweetDownloader.csproj", "{B094F132-C563-43C5-BCC9-6C03A2AEA3E5}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SentimentAnalyzer", "SentimentAnalyzer\SentimentAnalyzer.pyproj", "{CF156927-D465-4941-92BA-60481270136F}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SentimentAnalyzer", "SentimentAnalyzer\SentimentAnalyzer.pyproj", "{B4F3C322-75AF-45D9-922F-C57ACE522BBD}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Stock Change Checker", "PythonApplication1\Stock Change Checker.pyproj", "{E9F8DED9-1993-41BA-A942-59E28957E618}"
 EndProject
@@ -23,6 +23,8 @@ Global
 		{CF156927-D465-4941-92BA-60481270136F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9F8DED9-1993-41BA-A942-59E28957E618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E9F8DED9-1993-41BA-A942-59E28957E618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F3C322-75AF-45D9-922F-C57ACE522BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F3C322-75AF-45D9-922F-C57ACE522BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
